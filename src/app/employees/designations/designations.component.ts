@@ -89,6 +89,7 @@ export class DesignationsComponent implements OnInit {
           this.isLoading = false;
           this.loadingMsg = 'data loading ..';
           console.log('RecordingsComponent: recordings =>' + this.rows);
+          console.log('Audio recordings response: ', res);
         },
         error => {
           this.isLoading = false;
