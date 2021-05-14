@@ -30,6 +30,7 @@ export class DashboardComponent implements OnInit, AfterContentInit {
   public model: any = { date: { year: 2018, month: 10, day: 9 } };
   public dash: any = { 'projects': 43, 'clients': 44, 'tasks': 37, 'employees': 218 };
   public userProfile: any;
+  
   totalUsers: any;
   totalUserPonds: any;
   totalRecordings: any;

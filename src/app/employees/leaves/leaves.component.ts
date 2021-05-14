@@ -64,6 +64,7 @@ export class LeavesComponent implements OnInit {
   productionDataForm: FormGroup;
   dateFrom: '';
   dateTo = '';
+  totalUserPonds: any;
 
   isFishPondHealth = false;
   public newPondId: any;
@@ -104,6 +105,8 @@ export class LeavesComponent implements OnInit {
     this.dataService.getAllUserPonds()
       .subscribe(res => {
         this.rows = res;
+        this.totalUserPonds = this.rows.length;
+        localStorage.setItem('totalUsers', this.totalUserPonds);
         this.isLoading = false;
         this.loadingMsg = 'data loading ...';
         console.log('UserPondsComponent: all user ponds responds >>>', this.rows);

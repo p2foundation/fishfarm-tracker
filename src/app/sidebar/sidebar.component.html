@@ -60,25 +60,33 @@
           <a routerLink="dashboard"><i class="la la-home"></i> <span>Back to Home</span></a>
         </li>
         <li class="menu-title">Settings</li>
-        <li [ngClass]="url2 === 'company-settings' ? 'active' : 'null'"><a routerLink="settings/company-settings">
-          Company Settings </a></li>
+        <li [ngClass]="url2 === 'company-settings' ? 'active' : 'null'">
+        </li>
         <li [ngClass]="url2 === 'localization' ? 'active' : 'null'"><a routerLink="settings/localization">
           Localization </a></li>
-        <li [ngClass]="url2 === 'theme-settings' ? 'active' : 'null'"><a routerLink="settings/theme-settings"> Theme
-          Settings </a></li>
-        <li [ngClass]="url2 === 'roles-permissions' ? 'active' : 'null'"><a routerLink="settings/roles-permissions">
-          Roles and Permissions </a></li>
-        <li [ngClass]="url2 === 'email-settings' ? 'active' : 'null'"><a routerLink="settings/email-settings"> Email
-          Settings </a></li>
-        <li [ngClass]="url2 === 'invoive-settings' ? 'active' : 'null'"><a routerLink="settings/invoive-settings">
-          Invoice Settings </a></li>
-        <li [ngClass]="url2 === 'salary-settings' ? 'active' : 'null'"><a routerLink="settings/salary-settings"> Salary
-          Settings </a></li>
-        <li [ngClass]="url2 === 'notifications' ? 'active' : 'null'"><a routerLink="settings/notifications">
-          Notifications </a></li>
-        <li [ngClass]="url2 === 'change-password' ? 'active' : 'null'"><a routerLink="settings/change-password"> Change
+        <li [ngClass]="url2 === 'theme-settings' ? 'active' : 'null'">
+          <!--<a routerLink="settings/theme-settings"> Theme Settings </a> -->
+        </li>
+        <li [ngClass]="url2 === 'roles-permissions' ? 'active' : 'null'">
+      
+        </li>
+        <li [ngClass]="url2 === 'email-settings' ? 'active' : 'null'">
+          <a routerLink="settings/email-settings"> Email Settings </a>
+        </li>
+        <li [ngClass]="url2 === 'invoive-settings' ? 'active' : 'null'">
+          <!--<a routerLink="settings/invoive-settings">Invoice Settings </a>-->
+        </li>
+        <li [ngClass]="url2 === 'salary-settings' ? 'active' : 'null'">
+          
+
+        </li>
+        <li [ngClass]="url2 === 'notifications' ? 'active' : 'null'">
+        </li>
+        <li [ngClass]="url2 === 'change-password' ? 'active' : 'null'">
+        <a routerLink="settings/change-password"> Change
           Password </a></li>
-        <li [ngClass]="url2 === 'leave-type' ? 'active' : 'null'"><a routerLink="settings/leave-type"> Leave Type </a>
+        <li [ngClass]="url2 === 'leave-type' ? 'active' : 'null'">
+          <!--<a routerLink="settings/leave-type"> Leave Type </a>-->
         </li>
       </ul>
       <ul *ngIf='chatView' class="sidebar-menu">

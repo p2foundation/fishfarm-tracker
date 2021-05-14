@@ -70,8 +70,7 @@ export class DataService {
   }
 
   getAudioRecordings(): Observable<any> {
-    return this.http
-      .get(`${this.f2DataServerUrl}/admin/audiorecordings`)
+    return this.http.get(`${this.f2DataServerUrl}/admin/audiorecordings`)
       .pipe(
         tap(_ => this.log(`DataService: audio recordings >>>>`) ),
         catchError(this.handleError('FishfarmTracker', []))
