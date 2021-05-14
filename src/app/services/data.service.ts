@@ -18,7 +18,7 @@ export class DataService {
       .get(`${this.f2DataServerUrl}/admin/getallusers`)
       .pipe(
         tap(_ => this.log(`dService: get all registered users >>>>`) ),
-        catchError(this.handleError('FishfarmTracker', []))
+        catchError(this.handleError('FishfarmTracker AllUsers', []))
       );
   }
   getAllUserPonds(): Observable<any> {
@@ -26,21 +26,21 @@ export class DataService {
       .get(`${this.f2DataServerUrl}/admin/getallponds`)
       .pipe(
         tap(_ => this.log(`srv: load all user pond >>>>`) ),
-        catchError(this.handleError('FishfarmTracker', []))
+        catchError(this.handleError('FishfarmTracker AllPonds', []))
       );
   }
   postUserPond(pondData: any): Observable<any> {
     return this.http.post<any>(`${this.f2DataServerUrl}/user/addpond`, pondData)
       .pipe(
         tap(_ => this.log(`add pond srv: post user pond >>>>`) ),
-        catchError(this.handleError('FishfarmTracker', []))
+        catchError(this.handleError('FishfarmTracker AddUserPond', []))
       );
   }
   getUserFarmPonds(): Observable<any> {
     return this.http.get(`${this.f2DataServerUrl}/admin/farm/getallponds`)
       .pipe(
         tap(_ => this.log(`srv: load user farm ponds >>>>`) ),
-        catchError(this.handleError('FishfarmTracker', []))
+        catchError(this.handleError('FishfarmTracker UserFarmPonds', []))
       );
   }
 
@@ -49,7 +49,7 @@ export class DataService {
     return this.http.post<any>(`${this.f2DataServerUrl}/admin/reports/fishhealth`, pondData)
       .pipe(
         tap(_ => this.log(`srv: user fish pond health : ${_}`)),
-        catchError(this.handleError('FishfarmTracker', []))
+        catchError(this.handleError('FishfarmTracker FishPondHealth', []))
       );
   }
 
@@ -57,7 +57,7 @@ export class DataService {
     return this.http.post<any>(this.f2DataServerUrl + '/admin/reports/productiondata', pondData)
       .pipe(
         tap(_ => this.log(`srv: user fish pond production data : ${_}`)),
-        catchError(this.handleError('FishfarmTracker', []))
+        catchError(this.handleError('FishfarmTracker ProductionData', []))
       );
   }
   
@@ -65,7 +65,7 @@ export class DataService {
     return this.http.post<any>(this.f2DataServerUrl + '/admin/reports/economicindicators', ecoUserId)
       .pipe(
         tap(_ => this.log(`ecoData srv: user economic indicator : ${_}`)),
-        catchError(this.handleError('FishfarmTracker', []))
+        catchError(this.handleError('FishfarmTracker EcoIndicator', []))
       );
   }
 
@@ -73,7 +73,7 @@ export class DataService {
     return this.http.get(`${this.f2DataServerUrl}/admin/audiorecordings`)
       .pipe(
         tap(_ => this.log(`DataService: audio recordings >>>>`) ),
-        catchError(this.handleError('FishfarmTracker', []))
+        catchError(this.handleError('FishfarmTracker Audio', []))
       );
   }
 

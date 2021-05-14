@@ -26,14 +26,16 @@ export class DashboardComponent implements OnInit, AfterContentInit {
   public invoices = [];
   public payments = [];
 
+  totalUsers: any;
+  totalUserPonds: any;
+  totalAudioRecordings: any;
+  
   // Initialized to specific date (09.10.2018).
   public model: any = { date: { year: 2018, month: 10, day: 9 } };
   public dash: any = { 'projects': 43, 'clients': 44, 'tasks': 37, 'employees': 218 };
   public userProfile: any;
+
   
-  totalUsers: any;
-  totalUserPonds: any;
-  totalRecordings: any;
 
   constructor(private appService: AppService, private router: Router) {
     this.projects = appService.projects;
@@ -47,7 +49,10 @@ export class DashboardComponent implements OnInit, AfterContentInit {
 
   ngOnInit() {
     this.userProfile = localStorage.getItem('profile');
-    this.totalUsers = localStorage.getItem('totalUsers');
+    this.totalUsers = 0+localStorage.getItem('totalUsers');
+    this.totalUserPonds = 0+localStorage.getItem('totalUserPonds');
+    this.totalAudioRecordings = 0+localStorage.getItem('totalAudioRecordings');
+
     console.log('profile: ', JSON.parse(this.userProfile));
 
     const pro_heights = $('.panel-eqHeight-clients').map(function () {
@@ -138,10 +143,10 @@ export class DashboardComponent implements OnInit, AfterContentInit {
         '#fd9ba8'
       ],
       data: [
-        {label: 'Employees', value: 30},
-        {label: 'Users', value: 16},
-        {label: 'Ponds', value: 37},
-        {label: 'Recordings', value: 43}
+        {label: 'Files', value: 30},
+        {label: 'Users', value: this.totalUsers},
+        {label: 'Ponds', value: this.totalUserPonds},
+        {label: 'Recordings', value: this.totalAudioRecordings}
       ],
       resize: true,
       redraw: true

@@ -106,7 +106,7 @@ export class LeavesComponent implements OnInit {
       .subscribe(res => {
         this.rows = res;
         this.totalUserPonds = this.rows.length;
-        localStorage.setItem('totalUsers', this.totalUserPonds);
+        localStorage.setItem('totalUserPonds', this.totalUserPonds);
         this.isLoading = false;
         this.loadingMsg = 'data loading ...';
         console.log('UserPondsComponent: all user ponds responds >>>', this.rows);

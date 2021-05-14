@@ -23,6 +23,8 @@ export class DesignationsComponent implements OnInit {
   public errorMsg = '';
   public audioList = true;
 
+  totalAudioRecordings: any = 0;
+
   constructor(
     private appService: AppService,
     private router: Router,
@@ -82,6 +84,8 @@ export class DesignationsComponent implements OnInit {
     this.dataService.getAudioRecordings()
       .subscribe(res => {
           this.rows = res;
+          this.totalAudioRecordings = this.rows.length;
+          localStorage.setItem('totalAudioRecording', this.totalAudioRecordings);
           this.isLoading = false;
           this.loadingMsg = 'data loading ..';
           console.log('RecordingsComponent: recordings =>' + this.rows);
